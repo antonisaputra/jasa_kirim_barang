@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\DB;
 class BarangController extends Controller
 {
     //
+
+    
+
     public function index(Tujuan $tujuan){
         $barang = Barang::where('id_tujuan', $tujuan->id)->get();
-        $tujuanMuatan = DB::select('SELECT tujuans.id, muatans.no_muatan, muatans.no_kendaraan, tujuans.pengirim, tujuans.id_muatan, tujuans.alamat_pengirim, tujuans.penerima, tujuans.alamat_penerima FROM tujuans INNER JOIN muatans ON tujuans.id_muatan=muatans.id WHERE tujuans.id='.$tujuan->id);
+        $tujuanMuatan = DB::select('SELECT tujuans.id, muatans.dbl, muatans.supir, muatans.no_kendaraan, tujuans.pengirim, tujuans.id_muatan, tujuans.alamat_pengirim, tujuans.penerima, tujuans.alamat_penerima, tujuans.no_resi FROM tujuans INNER JOIN muatans ON tujuans.id_muatan=muatans.id WHERE tujuans.id='.$tujuan->id);
         return view('barang.index', ['barang' =>  $barang, 'tujuanMuatan'=> $tujuanMuatan, 'tujuan' => $tujuan]);
     }
 
@@ -22,9 +25,12 @@ class BarangController extends Controller
     }
 
     public function aksi_tambah_barang(Tujuan $tujuan, Request $request){
+
+
         Barang::create([
             'id_muatan' => $tujuan->id_muatan,
             'id_tujuan' => $tujuan->id,
+            'status_barang' => $request->status_barang,
             'jenis_barang' => $request->jenis_barang,
             'kuantum' => $request->kuantum,
             'unit' => $request->unit,

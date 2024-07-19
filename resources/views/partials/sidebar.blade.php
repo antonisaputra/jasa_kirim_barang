@@ -35,7 +35,7 @@
                     </g>
                 </svg>
             </span>
-            <span class="app-brand-text demo menu-text fw-bold ms-2 text-uppercase">CRT</span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2 text-uppercase">CVRT</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -59,6 +59,12 @@
             <a href="/muatan" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-envelope"></i>
                 <div data-i18n="Email">Pengiriman</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="/laporan" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-envelope"></i>
+                <div data-i18n="Email">Laporan</div>
             </a>
         </li>
     </ul>

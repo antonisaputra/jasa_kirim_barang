@@ -12,8 +12,10 @@
         <thead>
           <tr>
             <th>No</th>
-            <th>No Muatan</th>
+            <th>DBL</th>
             <th>Truck No Polisi</th>
+            <th>Sopir</th>
+            <th>Tanggal</th>
             <th>Aksi</th>
           </tr>
         </thead>
@@ -23,8 +25,10 @@
             <td>
               {{$loop->iteration}}
             </td>
-            <td>{{$muatan->no_muatan}}</td>
+            <td>{{$muatan->dbl}}</td>
             <td>{{$muatan->no_kendaraan}}</td>
+            <td>{{$muatan->supir}}</td>
+            <td>{{ $muatan->created_at->format('d-m-Y') }}</td>
             <td class="d-flex">
               <div class="dropdown">
                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -35,7 +39,7 @@
                   <a class="dropdown-item" href="/delete_muatan/{{$muatan->id}}" onclick="return confirm('Yakin Data Muatan Di Hapus')"><i class="bx bx-trash me-2"></i> Delete</a>
                 </div>
               </div>
-              <a href="/tujuan/{{$muatan->id}}" class="btn-success btn ms-3"> Lihat Pengiriman</a>
+              <a href="/tujuan/{{$muatan->id}}" class="btn-secondary btn ms-3"> Lihat Pengiriman</a>
             </td>
           </tr>
           @endforeach

@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('muatans', function (Blueprint $table) {
             $table->id();
-            $table->string('no_muatan');
             $table->string('no_kendaraan');
+            $table->string('supir');
+            $table->string('dbl');
             $table->timestamps();
         });
     }

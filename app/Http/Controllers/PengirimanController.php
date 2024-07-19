@@ -20,9 +20,11 @@ class PengirimanController extends Controller
     }
 
     public function aksi_tambah_muatan(Request $request){
-        $data['no_muatan'] = $request->no_muatan;
-        $data['no_kendaraan'] = $request->no_kendaraan;
-
+        $data = $request->validate([
+            'no_kendaraan' => 'required',
+            'supir' => 'required',
+            'dbl' => 'required'
+        ]);
         Muatan::create($data);
 
         return redirect('muatan');
@@ -34,9 +36,11 @@ class PengirimanController extends Controller
     }
 
     public function aksi_edit_muatan(Muatan $muatan, Request $request){
-        $data['no_muatan'] = $request->no_muatan;
-        $data['no_kendaraan'] = $request->no_kendaraan;
-
+        $data = $request->validate([
+            'no_kendaraan' => 'required',
+            'supir' => 'required',
+            'dbl' => 'required'
+        ]);
         Muatan::where('id', $muatan->id)->update($data);
 
         return redirect('/muatan');

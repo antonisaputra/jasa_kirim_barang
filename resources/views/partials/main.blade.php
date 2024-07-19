@@ -37,6 +37,8 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="/assets/js/config.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <script src="/assets/js/xlsx.js"></script>
+
 </head>
 
 <body>
@@ -102,13 +104,8 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#table_muatan').DataTable();
-            $('#tabel_tujuan').DataTable();
-            $('#tabel_barang').DataTable();
-        });
-    </script>
+    <script src="/assets/src/script.js"></script>
+
 </body>
 
 </html>

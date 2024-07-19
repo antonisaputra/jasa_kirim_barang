@@ -13,6 +13,8 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>No Urut</th>
+            <th>No Resi</th>
             <th>Pengirim</th>
             <th>Alamat Pengirim</th>
             <th>Penerima</th>
@@ -26,6 +28,8 @@
             <td>
               {{$loop->iteration}}
             </td>
+            <td>{{$tujuans->no_urut}}</td>
+            <td>{{$tujuans->no_resi}}</td>
             <td>{{$tujuans->pengirim}}</td>
             <td>{{$tujuans->alamat_pengirim}}</td>
             <td>{{$tujuans->penerima}}</td>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\Pengiriman;
 use App\Http\Controllers\PengirimanController;
 use App\Http\Controllers\TujuanController;
@@ -44,3 +45,5 @@ Route::post('/tambah_barang/{tujuan:id}', [BarangController::class, 'aksi_tambah
 Route::get('/edit_barang/{barang:id}', [BarangController::class, 'edit_barang']);
 Route::put('/edit_barang/{barang:id}', [BarangController::class, 'aksi_edit_barang']);
 Route::get('/hapus_barang/{barang:id}', [BarangController::class, 'hapus_barang']);
+
+Route::get('/laporan', [LaporanController::class, 'index']);

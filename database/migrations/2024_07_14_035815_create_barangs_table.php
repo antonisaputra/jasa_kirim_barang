@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_muatan');
             $table->foreignId('id_tujuan');
+            $table->string('status_barang');
             $table->string('jenis_barang');
             $table->integer('kuantum');
             $table->string('unit');

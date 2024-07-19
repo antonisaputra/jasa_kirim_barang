@@ -11,6 +11,7 @@
                     <div class="mb-3 ms-3">
                         <label for="jenis_barang" class="form-label">Jenis Barang</label>
                         <input type="text" class="form-control" id="jenis_barang" name="jenis_barang" aria-describedby="emailHelp" autofocus>
+
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -47,6 +48,16 @@
                     <div class="mb-3 ms-3">
                         <label for="jumlah_ongkos" class="form-label">Jumlah Ongkos</label>
                         <input type="number" class="form-control" id="jumlah_ongkos" name="jumlah_ongkos" aria-describedby="emailHelp">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-3 ms-3">
+                        <label for="status_barang" class="form-label">Status Barang</label>
+                        <select class="form-select" id="status_barang" name="status_barang" aria-label="Default select example">
+                            <option value="-">Tidak ada</option>
+                            <option value="L">L</option>
+                            <option value="F">F</option>
+                        </select>
                     </div>
                 </div>
             </div>

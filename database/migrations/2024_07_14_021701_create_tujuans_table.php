@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('tujuans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_muatan');
+            $table->string('no_urut');
+            $table->string('no_resi');
             $table->string('pengirim');
             $table->string('alamat_pengirim');
             $table->string('penerima');

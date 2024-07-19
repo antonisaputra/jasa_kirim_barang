@@ -8,8 +8,9 @@
     <div class="row mx-3">
       <div class="col-lg-6">
         <h5>Muatan</h5>
-        <p>No Muatan: <span class="text-primary fw-bold">{{$TM->no_muatan}}</span></p>
+        <p>No DBL: <span class="text-primary fw-bold">{{$TM->dbl}}</span></p>
         <p>No Kendaraan : <span class="text-primary fw-bold">{{$TM->no_kendaraan}}</span></p>
+        <p>Nama Supir : <span class="text-primary fw-bold">{{$TM->supir}}</span></p>
       </div>
       <div class="col-lg-6">
         <h5>Pengiriman</h5>
@@ -17,6 +18,7 @@
         <p>Alamat Pengirim : <span class="text-primary fw-bold">{{$TM->alamat_pengirim}}</span></p>
         <p>Penerima : <span class="text-primary fw-bold">{{$TM->penerima}}</span></p>
         <p>Alamat Penerima : <span class="text-primary fw-bold">{{$TM->alamat_penerima}}</span></p>
+        <p>No Resi : <span class="text-primary fw-bold">{{$TM->no_resi}}</span></p>
       </div>
     </div>
     @endforeach
