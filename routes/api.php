@@ -36,7 +36,7 @@ Route::get('/laporan/{waktu}', function($waktu){
 
 Route::get('/laporan_excel/{muatan:id}', function(Muatan $muatan){
     // $tujuan = Tujuan::where('id_muatan', $muatan->id)->get();
-    $barang = DB::select('SELECT barangs.id, barangs.status_barang, barangs.jenis_barang, barangs.kuantum, barangs.unit, barangs.jml_berat, barangs.vol, barangs.ongkos, barangs.jumlah_ongkos, tujuans.pengirim, tujuans.penerima, tujuans.no_resi FROM barangs INNER JOIN tujuans ON barangs.id_tujuan=tujuans.id WHERE barangs.id_muatan='.$muatan->id);
+    $barang = DB::select('SELECT barangs.id, barangs.status_barang, barangs.jenis_barang, barangs.kuantum, barangs.unit, barangs.jml_berat, barangs.vol, barangs.ongkos, barangs.jumlah_ongkos, tujuans.pengirim, tujuans.penerima, tujuans.no_resi, barangs.status_barang FROM barangs INNER JOIN tujuans ON barangs.id_tujuan=tujuans.id WHERE barangs.id_muatan='.$muatan->id);
 
 
 

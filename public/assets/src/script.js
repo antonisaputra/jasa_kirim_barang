@@ -69,16 +69,32 @@ function laporan_excel($id){
         ];
         let total = 0;
         barang.forEach((item) => {
-            modifiedData.push([
-                no++,
-                item.no_resi,
-                item.pengirim,
-                item.penerima,
-                item.kuantum,
-                item.unit,
-                item.jenis_barang,
-                item.jumlah_ongkos
-            ]);
+            if(item.status_barang == "-"){
+                modifiedData.push([
+                    no++,
+                    item.no_resi,
+                    item.pengirim,
+                    item.penerima,
+                    item.kuantum,
+                    item.unit,
+                    item.jenis_barang,
+                    item.jumlah_ongkos,
+                    ''
+                ]);
+            }else{
+                modifiedData.push([
+                    no++,
+                    item.no_resi,
+                    item.pengirim,
+                    item.penerima,
+                    item.kuantum,
+                    item.unit,
+                    item.jenis_barang,
+                    item.jumlah_ongkos,
+                    item.status_barang
+                ]);
+            }
+            
             total+=item.jumlah_ongkos
         });
         modifiedData.push([
