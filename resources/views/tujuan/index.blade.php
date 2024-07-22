@@ -7,6 +7,7 @@
     <div class="ms-3 mb-3">
       <a href="/muatan" class="btn btn-danger   ">Kembali Ke Muatan</a>
       <a href="/tambah_pengiriman/{{$muatan->id}}" class="btn btn-primary">Tambah Pengiriman</a>
+      <a href="/notaAll/{{$muatan->id}}" class="btn btn-success">Print Semua</a>
     </div>
     <div class="table-responsive text-nowrap">
       <table class="table" id="tabel_tujuan">

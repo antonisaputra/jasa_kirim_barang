@@ -71,4 +71,5 @@ Route::post('/login', [AuthController::class, 'authenticate']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::get('/nota/{tujuan:id}', [NotaController::class, 'index']);
+Route::get('/notaAll/{muatan:id}', [NotaController::class, 'notaAll']);
 

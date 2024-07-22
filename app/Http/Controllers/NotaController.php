@@ -18,4 +18,10 @@ class NotaController extends Controller
 
         return  view('nota', ['tujuan' => $tujuan, 'muatan' => $muatan, 'barang' => $barang]);
     }
+
+    public function notaAll(Muatan $muatan){
+        $tujuan = Tujuan::where('id_muatan', $muatan->id)->get();
+        
+        return view('notaAll', ['tujuans' => $tujuan, 'muatan' => $muatan]);
+    }
 }
