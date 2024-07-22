@@ -27,6 +27,15 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="mb-3 ms-3">
+                        <label for="hp_pengirim" class="form-label">No HP Pengirim</label>
+                        <input type="text" class="form-control" id="hp_pengirim" name="hp_pengirim" aria-describedby="emailHelp">
+                        @error('hp_pengirim')
+                        <small class="text-sm text-danger">Nomor HP Pengirim {{$message}}</small>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-3 ms-3">
                         <label for="penerima" class="form-label">Penerima</label>
                         <input type="text" class="form-control" id="penerima" name="penerima" aria-describedby="emailHelp">
                         @error('penerima')
@@ -40,6 +49,15 @@
                         <input type="text" class="form-control" id="alamat_penerima" name="alamat_penerima" aria-describedby="emailHelp">
                         @error('alamat_penerima')
                         <small class="text-sm text-danger">Alamat Penerima {{$message}}</small>
+                        @enderror
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-3 ms-3">
+                        <label for="hp_penerima" class="form-label">No HP Penerima</label>
+                        <input type="text" class="form-control" id="hp_penerima" name="hp_penerima" aria-describedby="emailHelp">
+                        @error('hp_penerima')
+                        <small class="text-sm text-danger">Nomor HP Penerima {{$message}}</small>
                         @enderror
                     </div>
                 </div>

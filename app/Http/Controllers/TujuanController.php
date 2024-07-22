@@ -31,6 +31,8 @@ class TujuanController extends Controller
             'no_resi' => 'required',
             'pengirim' => 'required',
             'alamat_pengirim' => 'required',
+            'hp_pengirim' => 'required',
+            'hp_penerima' => 'required',
             'penerima' => 'required',
             'alamat_penerima' => 'required',
         ]);
@@ -67,6 +69,8 @@ class TujuanController extends Controller
             'no_resi' => 'required',
             'pengirim' => 'required',
             'alamat_pengirim' => 'required',
+            'hp_pengirim' => 'required',
+            'hp_penerima' => 'required',
             'penerima' => 'required',
             'alamat_penerima' => 'required',
         ]);

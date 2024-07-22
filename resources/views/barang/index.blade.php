@@ -26,7 +26,7 @@
     <div class="ms-3">
       <a href="/tujuan/{{$tujuan->id_muatan}}" class="btn btn-danger">Kembali Ke Pengiriman</a>
       <a href="/tambah_barang/{{$tujuan->id}}" class="btn btn-primary">Tambah Barang</a>
-      <a href="/tambah_barang/{{$tujuan->id}}" class="btn btn-success">Print</a>
+      <a href="/nota/{{$tujuan->id}}" class="btn btn-success">Print</a>
     </div>
     <div class="table-responsive text-nowrap">
       <table class="table" id="tabel_barang">

@@ -4,6 +4,24 @@ $(document).ready(function () {
     $('#tabel_barang').DataTable();
 });
 
+function formatRupiah(angka, prefix) {
+    var numberString = angka.toString().replace(/[^,\d]/g, ''),
+        split = numberString.split(','),
+        sisa = split[0].length % 3,
+        rupiah = split[0].substr(0, sisa),
+        ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+    if (ribuan) {
+        separator = sisa ? '.' : '';
+        rupiah += separator + ribuan.join('.');
+    }
+
+    rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+    return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+}
+
+console.log(formatRupiah(5000000, 'Rp.'))
+
 function laporan() {
     let waktu = $('#waktu').val()
     console.log(waktu)
@@ -78,7 +96,7 @@ function laporan_excel($id){
                     item.kuantum,
                     item.unit,
                     item.jenis_barang,
-                    item.jumlah_ongkos,
+                    formatRupiah(item.jumlah_ongkos, 'Rp.'),
                     ''
                 ]);
             }else{
@@ -90,7 +108,7 @@ function laporan_excel($id){
                     item.kuantum,
                     item.unit,
                     item.jenis_barang,
-                    item.jumlah_ongkos,
+                    formatRupiah(item.jumlah_ongkos, 'Rp.'),
                     item.status_barang
                 ]);
             }
@@ -105,8 +123,15 @@ function laporan_excel($id){
             '',
             '',
             '',
-            total
+            formatRupiah(total, 'Rp.')
         ]);
+
+        let komisi = (total * 10)/ 100;
+        modifiedData.push([
+            '',
+            'Komisi :',
+            formatRupiah(komisi, 'Rp.'),
+        ])
 
         // Create worksheet from modified data
         var worksheet = XLSX.utils.aoa_to_sheet(modifiedData);
