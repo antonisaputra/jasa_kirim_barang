@@ -26,7 +26,6 @@ class TujuanController extends Controller
 
     public function aksi_tambah_pengiriman(Muatan $muatan, Request $request)
     {
-
         $data = $request->validate([
             'no_resi' => 'required',
             'pengirim' => 'required',
@@ -65,7 +64,6 @@ class TujuanController extends Controller
         $muatan = Muatan::where('id', $tujuan->id_muatan)->first();
 
         $data = $request->validate([
-            'id_muatan' => 'required',
             'no_resi' => 'required',
             'pengirim' => 'required',
             'alamat_pengirim' => 'required',

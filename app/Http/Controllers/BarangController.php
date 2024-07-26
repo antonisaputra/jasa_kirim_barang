@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\DB;
 class BarangController extends Controller
 {
     //
-
-    
-
     public function index(Tujuan $tujuan){
         $barang = Barang::where('id_tujuan', $tujuan->id)->get();
         $tujuanMuatan = DB::select('SELECT tujuans.id, muatans.dbl, muatans.supir, muatans.no_kendaraan, tujuans.pengirim, tujuans.id_muatan, tujuans.alamat_pengirim, tujuans.penerima, tujuans.alamat_penerima, tujuans.no_resi FROM tujuans INNER JOIN muatans ON tujuans.id_muatan=muatans.id WHERE tujuans.id='.$tujuan->id);
@@ -25,8 +22,6 @@ class BarangController extends Controller
     }
 
     public function aksi_tambah_barang(Tujuan $tujuan, Request $request){
-
-
         Barang::create([
             'id_muatan' => $tujuan->id_muatan,
             'id_tujuan' => $tujuan->id,
