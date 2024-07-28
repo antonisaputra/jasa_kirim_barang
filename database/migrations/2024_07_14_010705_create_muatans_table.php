@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('no_kendaraan');
             $table->string('supir');
             $table->string('dbl');
+            $table->foreignId('id_user');
             $table->timestamps();
         });
     }

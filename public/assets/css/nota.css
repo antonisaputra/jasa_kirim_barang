@@ -6,7 +6,7 @@
 .kertas {
     height: 14cm;
     width: 24cm;
-    /* border: 1px solid #000; */
+    border: 1px solid #000;
 }
 
 .header {
@@ -16,7 +16,7 @@
 }
 
 .header-perusahaan {
-    width: 7.7cm;
+    width: 14cm;
 }
 
 .header-perusahaan p {

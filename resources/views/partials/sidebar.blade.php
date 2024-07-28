@@ -61,13 +61,13 @@
                 <div data-i18n="Email">Pengiriman</div>
             </a>
         </li>
-        @if(auth()->user()->role == "admin")
         <li class="menu-item">
             <a href="/laporan" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Email">Laporan</div>
             </a>
         </li>
+        @if(auth()->user()->role == "admin")
         <li class="menu-item">
             <a href="/user" class="menu-link">
                 <i class="bx bx-user me-2"></i>

@@ -22,6 +22,8 @@ class BarangController extends Controller
     }
 
     public function aksi_tambah_barang(Tujuan $tujuan, Request $request){
+        $ongkos =  (int)str_replace(['Rp. ', ',', '.'], '', $request->ongkos);
+        $jumlah_ongkos = (int)str_replace(['Rp. ', ',', '.'], '', $request->jumlah_ongkos);
         Barang::create([
             'id_muatan' => $tujuan->id_muatan,
             'id_tujuan' => $tujuan->id,
@@ -31,8 +33,8 @@ class BarangController extends Controller
             'unit' => $request->unit,
             'jml_berat' => $request->jml_berat,
             'vol' => $request->vol,
-            'ongkos' => $request->ongkos,
-            'jumlah_ongkos' => $request->jumlah_ongkos,
+            'ongkos' => $ongkos,
+            'jumlah_ongkos' => $jumlah_ongkos,
         ]);
 
         return redirect('/barang/'.$tujuan->id);
@@ -44,14 +46,16 @@ class BarangController extends Controller
     }
 
     public function aksi_edit_barang(Barang $barang, Request $request){
+        $ongkos =  (int)str_replace(['Rp. ', ',', '.'], '', $request->ongkos);
+        $jumlah_ongkos = (int)str_replace(['Rp. ', ',', '.'], '', $request->jumlah_ongkos);
         Barang::where('id', $barang->id)->update([
             'jenis_barang' => $request->jenis_barang,
             'kuantum' => $request->kuantum,
             'unit' => $request->unit,
             'jml_berat' => $request->jml_berat,
             'vol' => $request->vol,
-            'ongkos' => $request->ongkos,
-            'jumlah_ongkos' => $request->jumlah_ongkos,
+            'ongkos' => $ongkos,
+            'jumlah_ongkos' => $jumlah_ongkos,
         ]);
 
         return redirect('/barang/'.$barang->id_tujuan);

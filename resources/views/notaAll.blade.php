@@ -45,16 +45,19 @@
     @foreach($tujuans as $tujuan)
     <div class="kertas">
         <div class="header d-flex">
-            <div class="header-perusahaan">
-                <p class="text-uppercase text-14 text-dark">Jasa Angkut Barang</p>
-                <p class="fw-bold text-dark text-18">CV. TRANS DEWI RENJANI</p>
-                <p class="text-12 text-dark">Jln. Kerta Jaya RT. 001/015 No. 52A. Bandengan Utara, Kel. Penjaringan Utara, Jakarta Utara (14440)</p>
-                <div class="d-flex text-12 text-danger">
-                    <div>
-                        <p style="width: 90px;">ADMIN HP/WA :</p>
-                    </div>
-                    <div>
-                        <p>0877-7714-5352, 0812-8058-7881, 0877-5666-6150</p>
+            <div class="header-perusahaan d-flex">
+                <img src="/assets/img/logo.png" alt="" width="120" srcset="" style="margin-top: 0;">
+                <div class="ps-2">
+                    <p class="text-uppercase text-14 text-dark">Jasa Angkut Barang</p>
+                    <p class="fw-bold text-dark text-18">CV. TRANS DEWI RENJANI</p>
+                    <p class="text-12 text-dark">Jln. Kerta Jaya RT. 001/015 No. 52A. Bandengan Utara, Kel. Penjaringan Utara, Jakarta Utara (14440)</p>
+                    <div class="d-flex text-12 text-danger">
+                        <div>
+                            <p style="width: 90px;">ADMIN HP/WA :</p>
+                        </div>
+                        <div>
+                            <p>0877-7714-5352, 0812-8058-7881, 0877-5666-6150</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -117,14 +120,14 @@
 
                 <body>
                     @php
-                        $no = 0;
-                        $total = 0;
-                        $barang = DB::select('SELECT * FROM barangs WHERE id_tujuan='.$tujuan->id);
+                    $no = 0;
+                    $total = 0;
+                    $barang = DB::select('SELECT * FROM barangs WHERE id_tujuan='.$tujuan->id);
                     @endphp
                     @foreach($barang as $b)
                     @php
-                        $no++;
-                        $total += $b->jumlah_ongkos;
+                    $no++;
+                    $total += $b->jumlah_ongkos;
                     @endphp
                     <tr>
                         <td>{{$loop->iteration}}</td>
@@ -139,22 +142,21 @@
                     @endforeach
 
                     @php
-                        $kurang_kolom = 6 - $no; 
+                    $kurang_kolom = 6 - $no;
                     @endphp
                     @if($no >= 0)
-                        @for($i = 1; $i <= $kurang_kolom; $i++)
-                            <tr>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
+                    @for($i = 1; $i <= $kurang_kolom; $i++) <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        </tr>
                         @endfor
-                    @endif
+                        @endif
                 </body>
             </table>
             <div class="d-flex justify-content-between">

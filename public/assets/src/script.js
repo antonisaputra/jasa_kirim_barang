@@ -1,8 +1,10 @@
 $(document).ready(function () {
-    $('#table_muatan').DataTable();
+    // $('#table_muatan').DataTable();
     $('#tabel_tujuan').DataTable();
     $('#tabel_barang').DataTable();
 });
+
+
 
 function formatRupiah(angka, prefix) {
     var numberString = angka.toString().replace(/[^,\d]/g, ''),
@@ -19,6 +21,16 @@ function formatRupiah(angka, prefix) {
     rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
     return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
 }
+
+let jumlah_ongkos = document.getElementById('jumlah_ongkos');
+jumlah_ongkos.addEventListener('keyup', function (e) {
+    jumlah_ongkos.value = formatRupiah(this.value, 'Rp. ');
+});
+
+let ongkos = document.getElementById('ongkos');
+ongkos.addEventListener('keyup', function (e) {
+    ongkos.value = formatRupiah(this.value, 'Rp. ');
+});
 
 console.log(formatRupiah(5000000, 'Rp.'))
 
@@ -149,4 +161,7 @@ function laporan_excel($id){
         console.error('There was a problem with the fetch operation:', error);
     });
 }
+
+
+
 

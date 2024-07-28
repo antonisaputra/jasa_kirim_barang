@@ -41,13 +41,13 @@
                 <div class="col-lg-6">
                     <div class="mb-3 me-3">
                         <label for="ongkos" class="form-label">Ongkos</label>
-                        <input type="number" class="form-control" id="ongkos" name="ongkos" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="ongkos" name="ongkos" aria-describedby="emailHelp">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="mb-3 ms-3">
                         <label for="jumlah_ongkos" class="form-label">Jumlah Ongkos</label>
-                        <input type="number" class="form-control" id="jumlah_ongkos" name="jumlah_ongkos" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="jumlah_ongkos" name="jumlah_ongkos" aria-describedby="emailHelp">
                     </div>
                 </div>
                 <div class="col-lg-6">

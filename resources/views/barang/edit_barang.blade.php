@@ -41,13 +41,13 @@
                 <div class="col-lg-6">
                     <div class="mb-3 me-3">
                         <label for="ongkos" class="form-label">Ongkos</label>
-                        <input type="number" class="form-control" value="{{$barang->ongkos}}"  id="ongkos" name="ongkos" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" value="Rp. {{number_format($barang->ongkos, 0, ',', '.')}}"  id="ongkos" name="ongkos" aria-describedby="emailHelp">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="mb-3 ms-3">
                         <label for="jumlah_ongkos" class="form-label">Jumlah Ongkos</label>
-                        <input type="number" value="{{$barang->jumlah_ongkos}}"  class="form-control" id="jumlah_ongkos" name="jumlah_ongkos" aria-describedby="emailHelp">
+                        <input type="text" value="Rp. {{number_format($barang->jumlah_ongkos, 0, ',', '.')}}"  class="form-control" id="jumlah_ongkos" name="jumlah_ongkos" aria-describedby="emailHelp">
                     </div>
                 </div>
             </div>

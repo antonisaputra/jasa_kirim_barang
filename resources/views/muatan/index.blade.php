@@ -20,7 +20,7 @@
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
-          @foreach($muatans as $muatan)
+          <!-- @foreach($muatans as $muatan)
           <tr>
             <td>
               {{$loop->iteration}}
@@ -42,7 +42,7 @@
               <a href="/tujuan/{{$muatan->id}}" class="btn-secondary btn ms-3"> Lihat Pengiriman</a>
             </td>
           </tr>
-          @endforeach
+          @endforeach -->
 
         </tbody>
       </table>

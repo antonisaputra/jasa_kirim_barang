@@ -105,7 +105,23 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="/assets/src/script.js"></script>
-
+    <script>
+        $(document).ready( function () {
+        $('#table_muatan').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('muatan') }}",
+            columns: [
+                { data: 'DT_RowIndex', name: 'DT_RowIndex' },
+                { data: 'dbl', name: 'dbl' },
+                { data: 'no_kendaraan', name: 'no_kendaraan' },
+                { data: 'supir', name: 'supir' },
+                { data: 'created_at', name: 'created_at' },
+                { data: 'action', name: 'action', orderable: false, searchable: false },
+            ]
+        });
+    });
+    </script>
 </body>
 
 </html>

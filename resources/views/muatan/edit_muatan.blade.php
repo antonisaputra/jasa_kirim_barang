@@ -11,7 +11,7 @@
                 <div class="col-lg-6">
                     <div class="mb-3 ms-3">
                         <label for="dbl" class="form-label">DBL</label>
-                        <input type="text" class="form-control" id="dbl" name="dbl" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="dbl" name="dbl" value="{{$muatan->dbl}}" >
                         @error('dbl')
                         <small class="text-sm text-danger">DBL {{$message}}</small>
                         @enderror
@@ -29,7 +29,7 @@
                 <div class="col-lg-6">
                     <div class="mb-3 ms-3">
                         <label for="supir" class="form-label">Nama Supir</label>
-                        <input type="text" class="form-control" id="supir" name="supir" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="supir" name="supir" value="{{$muatan->supir}}">
                         @error('supir')
                         <small class="text-sm text-danger">Nama Supir {{$message}}</small>
                         @enderror

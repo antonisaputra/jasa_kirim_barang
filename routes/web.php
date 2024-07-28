@@ -30,7 +30,7 @@ Route::group(['middleware' => ['checklogin']], function () {
         return view('index');
     });
     
-    Route::get('/muatan', [PengirimanController::class, 'index']);
+    Route::get('/muatan', [PengirimanController::class, 'index'])->name('muatan');
     Route::get('/tambah_muatan',[PengirimanController::class, 'tambah_muatan']);
     Route::post('/tambah_muatan',[PengirimanController::class, 'aksi_tambah_muatan']);
     Route::get('/edit_muatan/{muatan:id}', [PengirimanController::class, 'edit_muatan']);
